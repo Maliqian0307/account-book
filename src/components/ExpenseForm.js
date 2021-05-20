@@ -7,7 +7,7 @@ class ExpenseForm extends React.Component{
     constructor(props) {
         super(props);
         this.state ={
-            category:props.expense? props.expense.description : '',
+            category:props.expense? props.expense.category : '',
             description:props.expense ? props.expense.description : '',
             amount:props.expense ? props.expense.amount : '',
             createdAt:props.expense ? props.expense.createdAt :undefined,

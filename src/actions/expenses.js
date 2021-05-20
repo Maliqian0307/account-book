@@ -20,11 +20,17 @@ export const addExpense = (
 
 export const editExpense = (id,update)=>({
     type:'EDIT_EXPENSE',
-    id,
-    update
+    id:id,
+    update:update
 })
     
-export const removeExpense= ({id})=>({
+
+// export const removeExpense= ({id})=>({
+//     type:'EDIT_EXPENSE',
+//     id
+// })
+export const removeExpense= (expense)=>({
     type:'REMOVE_EXPENSE',
-    id
+    id:expense.id
 })
+
