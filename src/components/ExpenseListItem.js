@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import numeral from 'numeral';
 
 const ExpenseListItem = ({id,category,description,amount,createdAt}) =>{
     
@@ -9,7 +10,7 @@ const ExpenseListItem = ({id,category,description,amount,createdAt}) =>{
             <Link to={`/edit/${id}`}>
             <h3>{description}</h3>                 
             </Link>
-            <p>category:{category} amount:{amount} date:{createdAt}</p>
+            <p>category:{category} {numeral(amount).format('$0,0.00')} date:{createdAt}</p>
             <br/>
         </div>
     )

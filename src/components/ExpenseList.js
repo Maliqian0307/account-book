@@ -1,11 +1,13 @@
 import React from 'react';
 import ExpenseListItem from './ExpenseListItem';
 import {connect} from 'react-redux';
-import getVisibleExpenses from '../selectors/expenses';
+import getVisibleExpenses from '../selectors/getVisibleExpenses';
+
 const ExpenseList = (props) => {
     return (
         <div>
             <p>ExpenseList</p>
+            
             {props.expenses.map((expense)=>{
                 return(
                     <ExpenseListItem key={expense.id} {...expense} />

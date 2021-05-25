@@ -1,7 +1,7 @@
 import uuid from 'uuid';
 
 export const addExpense = (
-    {
+    {   
         category='',
         description='',
         amount=0,

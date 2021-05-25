@@ -7,7 +7,7 @@ class ExpenseForm extends React.Component{
     constructor(props) {
         super(props);
         this.state ={
-            category:props.expense? props.expense.category : '',
+            category:props.expense? props.expense.category : 'Daily goods',
             description:props.expense ? props.expense.description : '',
             amount:props.expense ? props.expense.amount : '',
             createdAt:props.expense ? props.expense.createdAt :undefined,
@@ -58,13 +58,19 @@ onSubmit=(e)=>{
     <div>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
-            <input
-                type="text"
-                placeholder="Type"
-                autoFocus
-                value={this.state.category}
-                onChange={this.onCategoryChange}
-            />
+            <label>
+                <select value={this.state.category} onChange={this.onCategoryChange}>
+                    <option value="Daily goods"> Daily goods </option>
+                    <option value="Rent"> Rent </option>
+                    <option value="Utility"> Utility </option>
+                    <option value="Food"> Food </option>
+                    <option value="Transport"> Transport </option>
+                    <option value="Social"> Social </option>
+                    <option value="Travel"> Travel </option>
+                    <option value="Other"> Social </option>
+                </select>
+            </label>
+             
             <input
                 type="text"
                 placeholder="Description"
