@@ -1,4 +1,4 @@
-const expenseReducer = (state=[],action)=>{
+const expenseReducer = (state=[], action)=>{
 switch(action.type){
     case'ADD_EXPENSE':
     return [
