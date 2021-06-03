@@ -51,16 +51,32 @@ export const editExpense = (id,update)=>({
     id:id,
     update:update
 })
+
+// export const startEditExpense = () => {
+//     return (dispatch) => {
+//         return database.ref('expenses').
+//     }
+// }
     
 
 
 
-export const removeExpense= (expense)=>({
+// export const removeExpense= (expense)=>({
+//     type:'REMOVE_EXPENSE',
+//     id:expense.id
+// })
+export const removeExpense = ({id} = {}) => ({
     type:'REMOVE_EXPENSE',
-    id:expense.id
+    id
 })
 
-
+export const startRemoveExpense = ( {id} = {} ) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`).remove().then(()=>{
+            dispatch(removeExpense({id}));
+        })
+    }
+}
 
 //set expense,把数据从firebase拿出来，保证刷新之后还能有数据
 export const setExpenses = (expenses) =>({
