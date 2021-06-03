@@ -10,7 +10,6 @@ const ExpenseListFilters = (props) => {
     return (
         <div>
 
-
         <select
             value = {props.filters.expenseType}
             onChange = {(e)=>{
