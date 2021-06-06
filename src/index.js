@@ -5,6 +5,7 @@ import AppRouter from './router/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetExpenses } from './actions/expenses';  
 import getVisibleExpenses from './selectors/getVisibleExpenses';
+import LoginPage from '../src/components/LoginPage';
 import './firebase/firebase';
 
 

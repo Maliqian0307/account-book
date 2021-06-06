@@ -11,7 +11,7 @@ switch(action.type){
         if(expense.id === action.id){
             return {
             ...expense,
-            ...action.update
+            ...action.updates
             }//改变需要改变的那个expense
         } else {
             return expense;

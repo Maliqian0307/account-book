@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { editExpense,startRemoveExpense } from '../actions/expenses';
+import { startEditExpense,startRemoveExpense } from '../actions/expenses';
 import ExpenseForm from './ExpenseForm';
 
 const EditExpensePage = (props)  =>{
@@ -11,7 +11,7 @@ const EditExpensePage = (props)  =>{
             <ExpenseForm 
                 expense= {props.expense}
                 onSubmit={(expense)=>{
-                props.dispatch(editExpense(props.expense.id,expense))//props.expense.id是action里的id，是通过router的匹配得到的
+                props.dispatch(startEditExpense(props.expense.id,expense))//props.expense.id是action里的id，是通过router的匹配得到的
                 props.history.push('/');
 
             }} />
