@@ -5,7 +5,7 @@ import {startAddExpense} from '../actions/expenses';
 
 
 const AddExpensePage =(props) =>{
-    // console.log(props);
+    // console.log(props);//dispatch,history,location,match
     return (
         <div>
         <ExpenseForm 

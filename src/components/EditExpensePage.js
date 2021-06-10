@@ -3,8 +3,10 @@ import {connect} from 'react-redux';
 import { startEditExpense,startRemoveExpense } from '../actions/expenses';
 import ExpenseForm from './ExpenseForm';
 
+//Any component rendered by react router will contain the following props: match, location, and history.
 const EditExpensePage = (props)  =>{
-    // console.log(props);
+    // console.log(props); //dispatch,match,location,history,expense
+   
     return(
         <div>
             {/* something needs to be edit : {props.match.params.id} */}
@@ -26,6 +28,8 @@ const EditExpensePage = (props)  =>{
 }
 
 const mapStateToProps = (state,props)=>{
+    // console.log(state); //一个object, includes auth(object), expenses(array), filters(object)
+    // console.log(props); //match,location,history
     return {
     expense:state.expenses.find((expense) => (expense.id === props.match.params.id))   
 }

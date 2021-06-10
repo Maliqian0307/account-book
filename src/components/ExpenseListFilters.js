@@ -5,6 +5,7 @@ import { sortByAmount,sortByDate,setTextFilter,setTypeFilter} from '../actions/f
 
 
 const ExpenseListFilters = (props) => {
+    // console.log(props);
 
     
     return (
@@ -48,6 +49,7 @@ const ExpenseListFilters = (props) => {
 }
 
 const mapStateToProps = (state) => {
+    // console.log(state);
     return {
         filters:state.filters
     }
