@@ -9,8 +9,8 @@ const Header= ({startLogout}) => {
     return (
         <div>
             <h1> Account Book </h1>
-            <NavLink to="/"> Dashboard </NavLink>
-            <NavLink to="/create"> Create Expense </NavLink>
+            <NavLink activeClassName="is-active" to="/dashboard"> Dashboard </NavLink>
+            <NavLink activeClassName="is-active" to="/create"> Create Expense </NavLink>
             <button onClick={startLogout}> logout </button>
         </div>
     )

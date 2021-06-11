@@ -5,8 +5,9 @@ import AppRouter, {history} from './router/AppRouter';
 import configureStore from './store/configureStore';
 import { startSetExpenses } from './actions/expenses';  
 import {login, logout} from './actions/auth';
-import getVisibleExpenses from './selectors/getVisibleExpenses';
+// import getVisibleExpenses from './selectors/getVisibleExpenses';
 import {firebase} from './firebase/firebase';
+import './styles/styles.scss';
 
 
 

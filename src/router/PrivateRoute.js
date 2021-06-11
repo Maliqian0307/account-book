@@ -5,8 +5,13 @@ import Header from '../components/Header';
 
 ///component:Component 这是在rename
 export const PrivateRoute = ({isAuthenticated, component: Component, ...rest}) => {
+    // console.log(rest);//rest有location,dispatch,path和computedMatch
     return (
-        <Route {...rest} component= {(props)=> (
+        //props：get all of the props that were passed to route.
+        //props: We are passing those through to the individual component
+        <Route {...rest} component= {(props)=> {
+            console.log(props);//这个props是history,location,和match
+            return(
             isAuthenticated ? (
                 <div>
                     <Header />
@@ -15,7 +20,8 @@ export const PrivateRoute = ({isAuthenticated, component: Component, ...rest}) =
             ) : (
             <Redirect to="/" />
             )
-        )} />
+            )
+        }} />
     )
 }
 
