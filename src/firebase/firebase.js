@@ -12,7 +12,7 @@ import 'firebase/auth';
 //     messagingSenderId: "563388230836",
 //     appId: "1:563388230836:web:aa144329e1512962fb7be1",
 //     measurementId: "G-EG7BRVZL8X"
-//   };
+// };
 
 
 
