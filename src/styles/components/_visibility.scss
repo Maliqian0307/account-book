@@ -1,0 +1,11 @@
+.show-for-mobile {
+    @media(min-width: $desktop-breakpoint) {//大屏时就不想显示出这个class
+        display: none;//the tag in question will not appear on the page at all, 最少要这么宽，才不显示，少于这么宽，就会显示
+    }
+}
+
+.show-for-desktop {
+    @media(max-width: $desktop-breakpoint - .01rem){
+        display: none; //最多这么宽， 才不显示。超过这么宽，就会显示
+    }
+}

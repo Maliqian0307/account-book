@@ -1,6 +1,7 @@
 import React from 'react';
 import { DatePicker} from 'antd';
 import 'antd/dist/antd.css';
+import moment from 'moment';
 
 //需要改成能sort的form
 class ExpenseForm extends React.Component{
@@ -10,12 +11,12 @@ class ExpenseForm extends React.Component{
             category:props.expense? props.expense.category : 'Daily goods',
             description:props.expense ? props.expense.description : '',
             amount:props.expense ? props.expense.amount : '',
-            createdAt:props.expense ? props.expense.createdAt :undefined,
+            createdAt:props.expense ? props.expense.createdAt : moment().format('YYYY-MM-DD'),
             error:''
         }
     }
 
-onDateChange = (data,dateString) =>{
+onDateChange = (date,dateString) =>{
     this.setState(()=>({createdAt:dateString}));
     // console.log(dateString);
 }
@@ -40,7 +41,7 @@ onCategoryChange = (e) =>{
 onSubmit=(e)=>{
     e.preventDefault();
         if(!this.state.description || !this.state.amount){
-            this.setState(()=>({error:'please provide description and amount'}))
+            this.setState(()=>({error:'please provide description and amount.'}))
         } else{
             this.setState(()=>({error:''}));
             this.props.onSubmit({
@@ -55,11 +56,14 @@ onSubmit=(e)=>{
 
   render(){
   return (
-    <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onSubmit}>
+        <form 
+        className="form"
+        onSubmit={this.onSubmit}>
+            {this.state.error && <p className="form__error">{this.state.error}</p>}
             <label>
-                <select value={this.state.category} onChange={this.onCategoryChange}>
+                <select 
+                className="select"
+                value={this.state.category} onChange={this.onCategoryChange}>
                     <option value="Daily goods"> Daily goods </option>
                     <option value="Rent"> Rent </option>
                     <option value="Utility"> Utility </option>
@@ -72,6 +76,7 @@ onSubmit=(e)=>{
             </label>
              
             <input
+                className="text-input"
                 type="text"
                 placeholder="Description"
                 autoFocus
@@ -79,15 +84,22 @@ onSubmit=(e)=>{
                 onChange={this.onDescriptionChange}
             />
             <input
+                className="text-input"
                 type="text"
                 placeholder="Amount"
                 value={this.state.amount}
                 onChange={this.onAmountChange}
             />
-            <DatePicker onChange={this.onDateChange} />
-            <button> Submit </button>
+            <DatePicker 
+            className="select"
+            onChange={this.onDateChange} />
+            <div>
+                <button className="button"> Save Expense </button>
+            </div>
         </form>
-    </div>
+
+        
+
 
     
     )

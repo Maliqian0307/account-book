@@ -8,6 +8,8 @@ import {login, logout} from './actions/auth';
 // import getVisibleExpenses from './selectors/getVisibleExpenses';
 import {firebase} from './firebase/firebase';
 import './styles/styles.scss';
+import LoadingPage from './components/LoadingPage';
+
 
 
 
@@ -39,7 +41,7 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<p>loading...</p>, document.getElementById('root'));
+ReactDOM.render(<LoadingPage />, document.getElementById('root'));
 
 
 

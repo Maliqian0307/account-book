@@ -1,0 +1,19 @@
+.button {
+    font-weight: 300;
+    font-size: $font-size-large;
+    color: white;
+    background: $blue;
+    border: none;
+    padding: $s-size;
+    display: inline-block;//能让vertical margin 和padding起作用,default是inline, vertical margin和padding都没法用
+    text-decoration: none;
+    line-height: 1;
+}
+
+.button--link{//link modifier
+    background: none;
+}
+
+.button--secondary {
+    background: #888;
+}
