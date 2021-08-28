@@ -1,8 +1,12 @@
+import moment from 'moment';
+
 
 const filtersReducerDefaultState = {
     expenseType:'',
     text:'',
     sortBy:'date',
+    startDate: moment(),
+    endDate: moment()
 };
 
 const filtersReducer = (state = filtersReducerDefaultState, action) => {
@@ -27,6 +31,16 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
             ...state,
             sortBy: 'amount'
         };
+        case 'SET_START_DATE':
+        return {
+              ...state,
+              startDate: action.startDate
+            };
+        case 'SET_END_DATE':
+        return {
+              ...state,
+              endDate: action.endDate
+            };
         default:
         return state;
     }

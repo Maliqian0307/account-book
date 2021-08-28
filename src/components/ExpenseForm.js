@@ -10,7 +10,7 @@ class ExpenseForm extends React.Component{
         this.state ={
             category:props.expense? props.expense.category : 'Daily goods',
             description:props.expense ? props.expense.description : '',
-            amount:props.expense ? props.expense.amount : '',
+            amount:props.expense ? (props.expense.amount) : '',
             createdAt:props.expense ? props.expense.createdAt : moment().format('YYYY-MM-DD'),
             error:''
         }
@@ -48,7 +48,7 @@ onSubmit=(e)=>{
             category:this.state.category,
             description:this.state.description,
             createdAt:this.state.createdAt,
-            amount:this.state.amount,
+            amount: parseFloat(this.state.amount, 10),
         });
         // console.log('submitted')
     }}

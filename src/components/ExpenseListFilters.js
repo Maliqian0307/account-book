@@ -1,12 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { DatePicker} from 'antd';
 import { sortByAmount,sortByDate,setTextFilter,setTypeFilter} from '../actions/filters';
 
 
 
 const ExpenseListFilters = (props) => {
     // console.log(props);
-
+    const { RangePicker } = DatePicker;
     
     return (
         <div className="content-container">
@@ -49,6 +50,14 @@ const ExpenseListFilters = (props) => {
                 <option value = 'date'>Date</option>
                 <option value = 'amount'>Amount</option>
                 </select> 
+            </div>
+
+            <div className="input-group__item">
+                <RangePicker 
+                className="select"
+                bordered="false"
+                size="large"
+                />
             </div>
         </div>
         
